@@ -9,12 +9,15 @@ public class BinSearchIntSet implements IntSet {
 
     public BinSearchIntSet(){
         nrOfElements = 0;
-        set = new int[1];
+        set = new int[0];
     }
 
     public void add(int element){
         if (!this.contains(element)){
-            int[] oldSet = set;
+            int[] oldSet = new int[set.length]; //set;
+            for (int i = 0; i<set.length; i++){
+                oldSet[i]=set[i];
+            }
 
             if (nrOfElements == set.length) {
                 set = new int[set.length + 1];
@@ -46,7 +49,7 @@ public class BinSearchIntSet implements IntSet {
     public void remove(int element){
         int index = binarySearch(element, set);
         if (index != -1){
-            for (int i = index; i < set.length; i++){
+            for (int i = index+1; i < set.length; i++){
                 set[i-1] = set[i];
             }
             nrOfElements--;
@@ -56,8 +59,8 @@ public class BinSearchIntSet implements IntSet {
 
 
     private int binarySearch(int element, int[] array){
-        int middle = array.length/2;
-        int max = array.length;
+        int middle = nrOfElements/2;
+        int max = nrOfElements;
         int min = 0;
 
         while( min != max ){
@@ -72,5 +75,14 @@ public class BinSearchIntSet implements IntSet {
             middle = (min+max)/2;
         }
         return -1;
+    }
+
+    @Override
+    public String toString(){
+        String returner = "";
+        for (int i : set){
+            returner += i + " ";
+        }
+     return returner;
     }
 }
