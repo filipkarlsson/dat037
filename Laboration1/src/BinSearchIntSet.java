@@ -8,3 +8,5 @@ public class BinSearchIntSet implements IntSet {
     public boolean contains(int element){throw new NotImplementedException();}
     public void remove(int element){throw new NotImplementedException();}
 }
+
+// Hej Filip jag är Bengt
