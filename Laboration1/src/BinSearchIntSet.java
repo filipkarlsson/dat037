@@ -9,4 +9,4 @@ public class BinSearchIntSet implements IntSet {
     public void remove(int element){throw new NotImplementedException();}
 }
 
-// Hej Filip jag är Bengt hejehjehe
+// Böläää
