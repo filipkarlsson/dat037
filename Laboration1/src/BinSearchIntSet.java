@@ -19,25 +19,28 @@ public class BinSearchIntSet implements IntSet {
                 oldSet[i]=set[i];
             }
 
+            // increase the size of set
             if (nrOfElements == set.length) {
                 set = new int[set.length + 1];
             }
 
             int i = 0;
 
+            // add old set to new set until it is time to add "element"
             while ( (i < nrOfElements) && (oldSet[i] < element) ){
                 set[i] = oldSet[i];
                 i++;
             }
 
+            // add "element"
             set[i] = element;
             nrOfElements++;
             i++;
 
+            // add the rest of old set to new set
             for (; i<nrOfElements;i++){
                 set[i] = oldSet[i-1];
             }
-
         }
     }
 
@@ -57,12 +60,12 @@ public class BinSearchIntSet implements IntSet {
     }
 
 
-
     private int binarySearch(int element, int[] array){
         int middle = nrOfElements/2;
         int max = nrOfElements;
         int min = 0;
 
+        // Find out in witch half of "array" "element" is, or would be in.
         while( min != max ){
             if (element == array[middle]) {
                 return middle;
@@ -83,6 +86,7 @@ public class BinSearchIntSet implements IntSet {
         for (int i : set){
             returner += i + " ";
         }
+        returner += "Number of elements: " + nrOfElements;
      return returner;
     }
 }
