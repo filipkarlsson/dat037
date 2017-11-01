@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3666e8a1-059c-4cfe-a891-3b67b7534a7d" name="Default" comment="Problematisk men ack så fager kod">
+    <list default="true" id="3666e8a1-059c-4cfe-a891-3b67b7534a7d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Laboration1.iws" />
@@ -603,7 +603,13 @@
       <option name="project" value="LOCAL" />
       <updated>1509546401789</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Problematisk men ack så fager kod">
+      <created>1509546420515</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1509546420515</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
