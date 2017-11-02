@@ -18,12 +18,17 @@ public class BinSearchGenSet<E extends Comparable<? super E>> implements GenSet<
 
     @Override
     public void add(E element) {
+        int index = binarySearch(element, set);
+        if (index < 0){
+            for (int i = set.size()-1; i > -index; i--){
 
+            }
+        }
     }
 
     @Override
     public boolean contains(E element) {
-
+        return binarySearch(element, set) >= 0;
     }
 
 
@@ -49,6 +54,7 @@ public class BinSearchGenSet<E extends Comparable<? super E>> implements GenSet<
 
             middle = (min+max)/2;
         }
+        // If element not in array, returns -index where element would be.
         return -middle;
     }
 
