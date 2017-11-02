@@ -70,7 +70,7 @@ public class BinSearchIntSet implements IntSet {
                 return middle;
             } else if (element > array[middle]) {
                 min = middle + 1;
-            } else if(element < array[middle]){
+            } else {
                 max = middle;
             }
 
