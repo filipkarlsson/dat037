@@ -1,7 +1,7 @@
 class ManTest {
     public static void main(String[] args) {
-        IntSet set = new BinSearchIntSet();
-/*
+       /* IntSet set = new BinSearchIntSet();
+
         set.add(0);
         set.add(-2);
         set.add(-1);
@@ -25,7 +25,7 @@ class ManTest {
         System.out.println("5: " + set.contains(5));
 
         System.out.println(set.toString());
-*/
+
 
 
         set.remove(7);
@@ -41,6 +41,44 @@ class ManTest {
         set.contains(6);  // result: false
 
         System.out.println(set.toString());
+*/
+
+
+
+        IntSet set = new BinSearchGenSetAsIntSet();
+        set.add(1);
+        set.add(0);
+        System.out.println(set.contains(0));
+
+        GenSet<String> kurser = new BinSearchGenSet<>();
+        System.out.println(kurser.toString());
+
+        kurser.add("DAT037");
+        System.out.println(kurser.toString());
+
+        kurser.add("DAT037");
+        System.out.println(kurser.toString());
+
+        kurser.add("SSY051");
+        System.out.println(kurser.toString());
+
+        kurser.add("SSY066");
+        System.out.println(kurser.toString());
+
+        kurser.add("TME122");
+        System.out.println(kurser.toString());
+
+        kurser.remove("SSY051");
+        System.out.println(kurser.toString());
+
+        System.out.println(kurser.contains("MVE041"));
+        System.out.println(kurser.contains("SSY051"));
+        System.out.println(kurser.contains("SSY066"));
+        System.out.println(kurser.contains("TME122"));
+        System.out.println(kurser.contains("Filip"));
+
+        System.out.println(kurser.toString());
+
 
     }
 }
