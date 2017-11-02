@@ -44,7 +44,6 @@ public class BinSearchIntSet implements IntSet {
         }
     }
 
-
     public boolean contains(int element){
        return binarySearch(element,set) != -1;
     }
