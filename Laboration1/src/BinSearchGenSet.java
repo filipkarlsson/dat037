@@ -20,7 +20,8 @@ public class BinSearchGenSet<E extends Comparable<? super E>> implements GenSet<
     public void add(E element) {
         int index = binarySearch(element, set);
         if (index < 0){
-            for (int i = set.size()-1; i > -index; i--){
+            set.add(set.get(set.size()-1));
+            for(int i = set.size()-2; i > -index; i--){
 
             }
         }

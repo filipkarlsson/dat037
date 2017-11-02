@@ -47,15 +47,15 @@
       <file leaf-file-name="BinSearchGenSet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BinSearchGenSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+            <state relative-caret-position="286">
+              <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding>
                 <element signature="e#217#218#0" expanded="true" />
                 <element signature="e#257#258#0" expanded="true" />
                 <element signature="e#308#309#0" expanded="true" />
                 <element signature="e#343#344#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#720#721#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -606,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509549429445</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented contains and started on add">
+      <created>1509615765799</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1509615765799</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -651,7 +658,8 @@
     <MESSAGE value="Ett test med en ny kommentar igen" />
     <MESSAGE value="Problematisk men ack så fager kod" />
     <MESSAGE value="All tests positive and updated comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="All tests positive and updated comments" />
+    <MESSAGE value="Implemented contains and started on add" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented contains and started on add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -816,15 +824,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BinSearchGenSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        <state relative-caret-position="286">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
             <element signature="e#217#218#0" expanded="true" />
             <element signature="e#257#258#0" expanded="true" />
             <element signature="e#308#309#0" expanded="true" />
             <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
           </folding>
         </state>
       </provider>
