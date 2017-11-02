@@ -1,0 +1,21 @@
+
+  BinarySearchIntSet
+set size  execution time (nanoseconds)
+      10             7.3
+     100            13.7
+    1000            42.6
+   10000            49.5
+  100000            59.2
+
+  LinSearchIntSet
+set size  execution time (nanoseconds)
+      10             9.8
+     100            67.0
+    1000           524.5
+   10000          5987.2
+  100000         51850.2
+ 1000000        795848.6
+10000000       8713725.5
+
+
+
