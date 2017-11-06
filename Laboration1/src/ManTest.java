@@ -77,6 +77,7 @@ class ManTest {
         System.out.println(kurser.contains("TME122"));
         System.out.println(kurser.contains("Filip"));
 
+        kurser.remove("hej");
         System.out.println(kurser.toString());
 
 

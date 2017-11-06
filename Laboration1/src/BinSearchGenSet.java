@@ -45,7 +45,8 @@ public class BinSearchGenSet<E extends Comparable<? super E>> implements GenSet<
         int middle = array.size()/2;
         int max = array.size();
         int min = 0;
-        int compare = 0;
+        int compare;
+
         // Find out in witch half of "array" "element" is, or would be in.
         while( min != max ){
             compare = element.compareTo(array.get(middle));
@@ -56,10 +57,10 @@ public class BinSearchGenSet<E extends Comparable<? super E>> implements GenSet<
             } else if(compare < 0){
                 max = middle;
             }
-
             middle = (min+max)/2;
         }
-        // If element not in array, returns -index where element would be.
+
+        // If element not in array, return -(index+1) where element would be.
         return -(middle+1);
     }
 
