@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3666e8a1-059c-4cfe-a891-3b67b7534a7d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplexitet.txt" afterPath="$PROJECT_DIR$/komplexitet.txt" />
     </list>
     <ignored path="Laboration1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -565,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509960588371</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Now with multiplicative array size increasment. (Is this proper english?)">
+      <created>1510236577512</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1510236577512</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
