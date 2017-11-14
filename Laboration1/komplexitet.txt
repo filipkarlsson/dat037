@@ -1,4 +1,4 @@
-Time complexity for contains() in BinSearchIntSet is: 5*log2(n)+6
+Time complexity for contains() in BinSearchIntSet is: 5*log2(n)+6  = O(log(n))
 
 
   BinarySearchIntSet
