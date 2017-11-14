@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Created by filip on 2017-11-14.
  */
-public class BinHeap<E> implements PrioQueue{
+public class BinHeap<E> implements PrioQueue<E>{
 
     private ArrayList<E> heap;
     private Comparator<? super E> comp;
@@ -15,12 +15,11 @@ public class BinHeap<E> implements PrioQueue{
         this.comp = comp;
     }
 
-    public void add(E o) {
-        heap.add(o);
 
-        int i = heap.size()-1;
-        comp.compare(o, heap.get((i-1)/2));
-
+    @Override
+    public void add(E e) {
+        heap.add(e);
+        bubbleUp(heap.size() - 1);
     }
 
     @Override
@@ -30,28 +29,30 @@ public class BinHeap<E> implements PrioQueue{
 
     @Override
     public E poll() {
-        return null;
+        E root = heap.get(0);
+        heap.remove(root);
+        return root;
     }
 
     @Override
-    public void remove(E o) {
-        int i = heap.indexOf(E);
-
-
+    public void remove(E e) {
+        int i = heap.indexOf(e);
+        swap(i, heap.size() - 1);
+        heap.remove(heap.size() - 1);
+        bubbleDown(i);
     }
 
     @Override
     public Iterator iterator() {
-        return null;
+        return heap.iterator();
     }
+
 
 
     private void bubbleUp(int i){
         if (comp.compare(heap.get(i), heap.get((i-1)/2)) < 0){
             // byt plats
-            E tmp = heap.get(i);
-            heap.set(i, heap.get((i-1)/2));
-            heap.set((i-1)/2,tmp);
+            swap(i,(i-2)/2);
             bubbleUp((i-1)/2);
         }
         else {
@@ -76,4 +77,3 @@ public class BinHeap<E> implements PrioQueue{
         heap.set(j,tmp);
     }
 }
-// Helvete då
