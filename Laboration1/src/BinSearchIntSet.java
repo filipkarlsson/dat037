@@ -14,14 +14,14 @@ public class BinSearchIntSet implements IntSet {
 
     public void add(int element){
         if (!this.contains(element)){
-            int[] oldSet = new int[set.length]; //set;
+            int[] oldSet = new int[set.length]; // create set temp;
             for (int i = 0; i<set.length; i++){
                 oldSet[i]=set[i];
             }
 
             // increase the size of set
             if (nrOfElements == set.length) {
-                set = new int[set.length + 1];
+                set = new int[set.length*2 + 1];
             }
 
             int i = 0;
@@ -73,7 +73,6 @@ public class BinSearchIntSet implements IntSet {
             } else {
                 max = middle;
             }
-
             middle = (min+max)/2;
         }
         return -1;

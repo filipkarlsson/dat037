@@ -1,5 +1,7 @@
-Time complexity for contains() in BinSearchIntSet is: 5*log2(n)+6  = O(log(n))
+Time complexity for contains() in BinSearchIntSet is: 5*log2(n)+6 = O(log(n))
 
+It can be seen below that the binary search used in both BinarySearchIntSet and BinSearchGenSetAsIntSet give execution
+times that is similar to log2(the nuber of operations).
 
   BinarySearchIntSet
 set size  execution time (nanoseconds)
@@ -32,3 +34,30 @@ set size  execution time (nanoseconds)
 
 
 
+The complexity of the method "contains()" was calculated in the comments as follows:
+
+    public boolean contains(int element){
+        return binarySearch(element,set) != -1;      // 1 + 1 for return and comparison
+    }
+
+
+    private int binarySearch(int element, int[] array){
+        int middle = nrOfElements/2;            // + 1
+        int max = nrOfElements;                 // + 1
+        int min = 0;                            // + 1
+
+        // Find out in witch half of "array" "element" is, or would be in.
+        while( min != max ){                        // + log2(n)
+            if (element == array[middle]) {         // + log2(n)
+                return middle;
+            } else if (element > array[middle]) {   // + log2(n)
+                min = middle + 1;
+            } else {
+                max = middle;                       // + log2(n)
+            }
+            middle = (min+max)/2;                   // + log2(n)
+        }
+        return -1;                  // + 1
+    }
+
+the total number of operations sums up to 5*log2(n)+6
