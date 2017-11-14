@@ -76,3 +76,4 @@ public class BinHeap<E> implements PrioQueue{
         heap.set(j,tmp);
     }
 }
+// Helvete då
