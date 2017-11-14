@@ -17,7 +17,7 @@ public class ManTest {
         binHeap.add(6);
         binHeap.add(7);
         binHeap.add(8);
-
+                        // lalala
         System.out.println(binHeap.toString());
     }
 }
