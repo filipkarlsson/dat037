@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3666e8a1-059c-4cfe-a891-3b67b7534a7d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Laboration2/src/NaturalOrderComparator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Laboration2/src/TestBinHeap.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplexitet.txt" afterPath="$PROJECT_DIR$/komplexitet.txt" />
-    </list>
+    <list default="true" id="3666e8a1-059c-4cfe-a891-3b67b7534a7d" name="Default" comment="" />
     <ignored path="Laboration1.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -569,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510236587083</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updated komplexitet.txt">
+      <created>1510739260558</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1510739260558</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -617,7 +619,8 @@
     <MESSAGE value="Implemented contains and started on add" />
     <MESSAGE value="All tests green for BinSearchGenSet" />
     <MESSAGE value="Now with multiplicative array size increasment. (Is this proper english?)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now with multiplicative array size increasment. (Is this proper english?)" />
+    <MESSAGE value="Updated komplexitet.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated komplexitet.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
