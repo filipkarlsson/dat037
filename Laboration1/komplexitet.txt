@@ -47,17 +47,21 @@ The complexity of the method "contains()" was calculated in the comments as foll
         int min = 0;                            // + 1
 
         // Find out in witch half of "array" "element" is, or would be in.
-        while( min != max ){                        // + log2(n)
-            if (element == array[middle]) {         // + log2(n)
+                                                    // loop start
+        while( min != max ){                        // + 1
+            if (element == array[middle]) {         // + 1
                 return middle;
-            } else if (element > array[middle]) {   // + log2(n)
+            } else if (element > array[middle]) {   // + 1
                 min = middle + 1;
             } else {
-                max = middle;                       // + log2(n)
+                max = middle;                       // + 1
             }
-            middle = (min+max)/2;                   // + log2(n)
-        }
+            middle = (min+max)/2;                   // + 1
+        }                                           // loop end
         return -1;                  // + 1
     }
 
-the total number of operations sums up to 5*log2(n)+6
+As the loop part of the method binary search divides the search-area by half in each loop, the total number of loops
+will be at most log2(n) where n is the size of the original search-area. As there are 5 operations in the loop and 6
+operations outside of the loop, the total number of operations, and also a measure of how long time it will take to run
+the method assuming that all operations take the same ammount of time, sums up to 5*log2(n)+6.
