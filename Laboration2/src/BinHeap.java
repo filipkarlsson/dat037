@@ -79,7 +79,7 @@ public class BinHeap<E> implements PrioQueue<E>{
     private void bubbleDown(int i){
         E leftChild;
         E rightChild;
-        if (heap.size() >= 2*i + 3){ // There exists 2 children to the current node
+        if (heap.size()-1 >= 2*i + 2){ // There exists 2 children to the current node
             leftChild = heap.get(2*i + 1);
             rightChild = heap.get(2*i + 2);
             if (comp.compare(rightChild, leftChild) < 0){ // The smallest is two the right
