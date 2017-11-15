@@ -88,7 +88,7 @@ public class BinHeap<E> implements PrioQueue<E>{
                     bubbleDown(2*i + 2); // Bubble to the right
                 }
             } else{
-                if (comp.compare(heap.get(i), leftChild) > 0){ // The node is greater than it's left child
+                if (comp.compare(heap.get(i), leftChild) > 0){ // The node is greater or equal to it's left child
                     swap(i, 2*i + 1);
                     bubbleDown(2*i + 1); // Bubble to the left
                 }
