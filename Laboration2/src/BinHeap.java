@@ -94,7 +94,7 @@ public class BinHeap<E> implements PrioQueue<E>{
                 }
             }
 
-        } else if (heap.size() >= 2*i + 2) { // There exists one child.
+        } else if (heap.size()-1 >= 2*i + 1) { // There exists one child.
             leftChild = heap.get(2*i + 1);
             if (comp.compare(heap.get(i), leftChild) > 0){ // The node is greater than it's left child
                 swap(i, 2*i + 1);

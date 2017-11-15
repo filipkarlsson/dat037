@@ -61,7 +61,11 @@ The complexity of the method "contains()" was calculated in the comments as foll
         return -1;                  // + 1
     }
 
-As the loop part of the method binary search divides the search-area by half in each loop, the total number of loops
+As the loop part of the method binarySearch divides the search-area by half in each loop, the total number of loops
 will be at most log2(n) where n is the size of the original search-area. As there are 5 operations in the loop and 6
 operations outside of the loop, the total number of operations, and also a measure of how long time it will take to run
 the method assuming that all operations take the same ammount of time, sums up to 5*log2(n)+6.
+
+The logarithmic relation between number of loops (k) and size of data being searched through (n) is found by the
+following calculations:
+2^k = n => k = log2(n)
