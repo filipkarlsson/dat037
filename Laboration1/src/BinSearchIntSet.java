@@ -9,7 +9,7 @@ public class BinSearchIntSet implements IntSet {
 
     public BinSearchIntSet(){
         nrOfElements = 0;
-        set = new int[0];
+        set = new int[1];
     }
 
     public void add(int element){

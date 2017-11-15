@@ -9,7 +9,7 @@ public class BinSearchGenSet<E extends Comparable<? super E>> implements GenSet<
     private ArrayList<E> set;
 
     public BinSearchGenSet() {
-        set = new ArrayList<E>();
+        set = new ArrayList<E>(1);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class BinSearchGenSet<E extends Comparable<? super E>> implements GenSet<
 
     @Override
     public boolean contains(E element) {
-        if (set.size() == 0) return false;
+        //if (set.size() == 0) return false;
         return binarySearch(element, set) >= 0;
     }
 
