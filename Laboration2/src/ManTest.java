@@ -1,7 +1,6 @@
 import java.util.Comparator;
 
 /**
- * Test
  * Created by JonathanU on 17/11/14.
  */
 public class ManTest {
@@ -18,7 +17,7 @@ public class ManTest {
         binHeap.add(6);
         binHeap.add(7);
         binHeap.add(8);
-                        // lalala
+
         System.out.println(binHeap.toString());
     }
 }
