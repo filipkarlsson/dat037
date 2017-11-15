@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3666e8a1-059c-4cfe-a891-3b67b7534a7d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/komplexitet.txt" afterPath="$PROJECT_DIR$/komplexitet.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Laboration2/src/BinHeap.java" afterPath="$PROJECT_DIR$/../Laboration2/src/BinHeap.java" />
     </list>
     <ignored path="Laboration1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -575,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510739260558</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Updated komplexitet.txt">
+      <created>1510741090792</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1510741090792</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
