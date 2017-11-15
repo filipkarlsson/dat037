@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 /**
+ * Lab 2
  * Created by filip on 2017-11-14.
  */
 public class BinHeap<E> implements PrioQueue<E>{
@@ -14,7 +15,7 @@ public class BinHeap<E> implements PrioQueue<E>{
     private Comparator<? super E> comp;
 
     public BinHeap(Comparator<? super E> comp) {
-        heap = new ArrayList();
+        heap = new ArrayList<>();
         this.comp = comp;
     }
 
@@ -53,6 +54,7 @@ public class BinHeap<E> implements PrioQueue<E>{
             swap(i, heap.size() - 1);
             heap.remove(heap.size() - 1);
             if (heap.size() != i) {
+                // Sometimes required to bubbleUp and sometimes to bubbleDown. (Booth not required at any time)
                 bubbleDown(i);
                 bubbleUp(i);
             }
@@ -60,7 +62,7 @@ public class BinHeap<E> implements PrioQueue<E>{
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<E> iterator() {
         return heap.iterator();
     }
 
@@ -71,9 +73,6 @@ public class BinHeap<E> implements PrioQueue<E>{
             // byt plats
             swap(i,(i-1)/2);
             bubbleUp((i-1)/2);
-        }
-        else {
-            return;
         }
     }
 
@@ -101,8 +100,6 @@ public class BinHeap<E> implements PrioQueue<E>{
                 swap(i, 2*i + 1);
                 bubbleDown(2*i + 1); // Bubble to the left
             }
-        } else {
-            return;
         }
 
 
