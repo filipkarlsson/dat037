@@ -26,4 +26,5 @@ public class Bid {
     public String toString() {
         return "new Bid(\"" + name + "\", " + price + ")";
     }
+
 }

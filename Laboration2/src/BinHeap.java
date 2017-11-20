@@ -101,8 +101,6 @@ public class BinHeap<E> implements PrioQueue<E>{
                 bubbleDown(2*i + 1); // Bubble to the left
             }
         }
-
-
     }
 
     private void swap(int i, int j){

@@ -5,12 +5,14 @@ public class StockTrade {
     private PrioQueue<Bid> buyersQueue;
 
     public StockTrade() {
-        sellersQueue = new BinHeap<Bid>(null);
-        buyersQueue  = new BinHeap<Bid>(null);
+        sellersQueue = new BinHeap<Bid>(new SellComparator());
+        buyersQueue  = new BinHeap<Bid>(new BuyComparator());
     }
 
     public Transaction placeSellBid(Bid bid) {
+        sellersQueue.remove(bid); // removes if the bidder already exists.
         sellersQueue.add(bid);
+        if (sellersQueue.peek()
         return null;
     }
 
