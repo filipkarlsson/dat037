@@ -5,20 +5,19 @@ import java.util.Comparator;
  */
 public class ManTest {
     public static void main(String[] args) {
-        Comparator<Integer> comp = new NaturalOrderComparator<>();
-        BinHeap<Integer> binHeap = new BinHeap<>(comp);
+        StockTrade stocken = new StockTrade();
 
+        stocken.placeBuyBid(new Bid("Johan", 0));
+        stocken.placeBuyBid(new Bid("Niklas", 2));
+        stocken.placeBuyBid(new Bid("Sten", 200));
+        stocken.placeBuyBid(new Bid("Arnold", 5));
+        stocken.placeBuyBid(new Bid("Sten", 10));
+        System.out.println(stocken.toString());
 
-        binHeap.add(1);
-        binHeap.add(2);
-        binHeap.add(3);
-        binHeap.add(4);
-        binHeap.add(5);
-        binHeap.add(6);
-        binHeap.add(7);
-        binHeap.add(8);
-
-        System.out.println(binHeap.toString());
+        stocken.placeSellBid(new Bid("JonathanAB",12));
+        System.out.println(stocken.toString());
+        stocken.placeSellBid(new Bid("JonathanAB",8));
+        System.out.println(stocken);
     }
 }
 // troll

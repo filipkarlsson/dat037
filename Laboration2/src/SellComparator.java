@@ -10,6 +10,6 @@ public class SellComparator implements Comparator<Bid> {
 
     @Override
     public int compare(Bid o1, Bid o2) {
-        return o2.price - o1.price;     // returns positive integer if o2 > o1 (prioritize lower o1)
+        return o1.price - o2.price;     // returns positive integer if o2 > o1 (prioritize lower o1)
     }
 }

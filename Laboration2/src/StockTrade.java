@@ -46,4 +46,12 @@ public class StockTrade {
     public Iterator<Bid> buyBidsIterator() {
         return buyersQueue.iterator();
     }
+
+    @Override
+    public String toString() {
+        return "StockTrade{" +
+                "sellersQueue=" + sellersQueue +
+                ", buyersQueue=" + buyersQueue +
+                '}';
+    }
 }
