@@ -1,12 +1,13 @@
 import java.util.Objects;
 
 public class Bid {
+    public final String name;
+    public final int price;
+
     public Bid(String name, int price) {
         this.name = name;
         this.price = price;
     }
-    public final String name;
-    public final int price;
 
     @Override
     public boolean equals(Object o) {
