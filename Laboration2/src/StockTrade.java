@@ -12,11 +12,20 @@ public class StockTrade {
     public Transaction placeSellBid(Bid bid) {
         sellersQueue.remove(bid); // removes if the bidder already exists.
         sellersQueue.add(bid);
-        if (sellersQueue.peek()
+        if (sellersQueue.peek().price <= buyersQueue.peek().price ){
+            return new Transaction(sellersQueue.poll().name, buyersQueue.peek().name, buyersQueue.poll().price);
+        }
         return null;
     }
 
-    public Transaction placeBuyBid(Bid bid) { return null; }
+    public Transaction placeBuyBid(Bid bid) {
+        buyersQueue.remove(bid);
+        buyersQueue.add(bid);
+        if (sellersQueue.peek().price <= buyersQueue.peek().price){
+            return new Transaction(sellersQueue.poll().name, buyersQueue.peek().name, buyersQueue.poll().price);
+        }
+        return null;
+    }
 
     public Iterator<Bid> sellBidsIterator() {
         return sellersQueue.iterator();
