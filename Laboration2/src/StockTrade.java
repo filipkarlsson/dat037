@@ -10,7 +10,7 @@ public class StockTrade {
     }
 
     public Transaction placeSellBid(Bid bid) {
-        // removes if the bidder already exists.
+        // remove bid if the bidder already exists.
         for (Bid b : sellersQueue) {
             if (b.name.equals(bid.name)) {
                 sellersQueue.remove(b);
@@ -19,6 +19,7 @@ public class StockTrade {
         }
 
         sellersQueue.add(bid);
+
         if ((buyersQueue.peek() != null) && (sellersQueue.peek().price <= buyersQueue.peek().price) ){
             return new Transaction(sellersQueue.poll().name, buyersQueue.peek().name, buyersQueue.poll().price);
         }
@@ -32,7 +33,9 @@ public class StockTrade {
                 break;
             }
         }
+
         buyersQueue.add(bid);
+
         if ( (sellersQueue.peek() != null) && (sellersQueue.peek().price <= buyersQueue.peek().price) ){
             return new Transaction(sellersQueue.poll().name, buyersQueue.peek().name, buyersQueue.poll().price);
         }
@@ -47,6 +50,7 @@ public class StockTrade {
         return buyersQueue.iterator();
     }
 
+
     @Override
     public String toString() {
         return "StockTrade{" +
@@ -54,4 +58,6 @@ public class StockTrade {
                 ", buyersQueue=" + buyersQueue +
                 '}';
     }
+
+
 }
