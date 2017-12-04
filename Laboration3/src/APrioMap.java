@@ -17,7 +17,14 @@ public class APrioMap<K, V extends Comparable<? super V>> implements PrioMap<K,V
 
     @Override
     public void put(K k, V v) {
+        if (map.containsKey(k)){
+            heap.get(map.get(k)).b = v;
+            bubbleDown(map.get(k));
+            bubbleUp(map.get(k));
+        }
 
+        heap.add(new Pair<K, V>(k,v));
+        bubbleUp(heap.size() - 1);
     }
 
     @Override
@@ -26,21 +33,22 @@ public class APrioMap<K, V extends Comparable<? super V>> implements PrioMap<K,V
     }
 
     @Override
-    public Pair peek() {
+    public Pair<K,V> peek() {
         if (heap.isEmpty()) return null;
         return heap.get(0);
     }
 
     @Override
-    public Pair poll() {
+    public Pair<K,V> poll() {
         if (heap.isEmpty()) return null;
-        Pair root = heap.get(0);
+        Pair<K,V> root = heap.get(0);
+
         swap(0, heap.size()-1);
         heap.remove(heap.size()-1);
-
         if (heap.size() != 0){
             bubbleDown(0);
         }
+        map.remove(root.a);
 
         return root;
 
