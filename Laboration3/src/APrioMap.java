@@ -27,13 +27,23 @@ public class APrioMap<K, V extends Comparable<? super V>> implements PrioMap<K,V
 
     @Override
     public Pair peek() {
-        if(heap.isEmpty()) return null;
+        if (heap.isEmpty()) return null;
         return heap.get(0);
     }
 
     @Override
     public Pair poll() {
-        return null;
+        if (heap.isEmpty()) return null;
+        Pair root = heap.get(0);
+        swap(0, heap.size()-1);
+        heap.remove(heap.size()-1);
+
+        if (heap.size() != 0){
+            bubbleDown(0);
+        }
+
+        return root;
+
     }
 
     private void bubbleUp(int i){
