@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Created by JonathanU on 17/11/30.
  */
-public class APrioMap<K, V extends Comparable<? super V>> implements PrioMap{
+public class APrioMap<K, V extends Comparable<? super V>> implements PrioMap<K,V>{
 
     private ArrayList<Pair<K,V>> heap;
     private HashMap<K, Integer> map;
@@ -16,13 +16,13 @@ public class APrioMap<K, V extends Comparable<? super V>> implements PrioMap{
     }
 
     @Override
-    public void put(Object o, Comparable comparable) {
+    public void put(K k, V v) {
 
     }
 
     @Override
-    public Comparable get(Object o) {
-        return null;
+    public V get(K k) {
+        return heap.get(map.get(k)).b;
     }
 
     @Override
