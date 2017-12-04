@@ -27,11 +27,54 @@ public class APrioMap<K, V extends Comparable<? super V>> implements PrioMap<K,V
 
     @Override
     public Pair peek() {
-        return null;
+        if(heap.isEmpty()) return null;
+        return heap.get(0);
     }
 
     @Override
     public Pair poll() {
         return null;
     }
+
+    private void bubbleUp(int i){
+        if (heap.get(i).b.compareTo(heap.get((i-1)/2).b) < 0){
+            // byt plats
+            swap(i,(i-1)/2);
+            bubbleUp((i-1)/2);
+        }
+    }
+
+    private void bubbleDown(int i){
+        V leftChild;
+        V rightChild;
+        if (heap.size()-1 >= 2*i + 2){ // There exists 2 children to the current node
+            leftChild = heap.get(2*i + 1).b;
+            rightChild = heap.get(2*i + 2).b;
+            if (rightChild.compareTo(leftChild) < 0){ // The smallest is two the right
+                if (heap.get(i).b.compareTo(rightChild) > 0){ // The node is greater than it's right child
+                    swap(i, 2*i + 2);
+                    bubbleDown(2*i + 2); // Bubble to the right
+                }
+            } else{
+                if (heap.get(i).b.compareTo(leftChild) > 0){ // The node is greater or equal to it's left child
+                    swap(i, 2*i + 1);
+                    bubbleDown(2*i + 1); // Bubble to the left
+                }
+            }
+
+        } else if (heap.size()-1 >= 2*i + 1) { // There exists one child.
+            leftChild = heap.get(2*i + 1).b;
+            if (heap.get(i).b.compareTo(leftChild) > 0){ // The node is greater than it's left child
+                swap(i, 2*i + 1);
+                bubbleDown(2*i + 1); // Bubble to the left
+            }
+        }
+    }
+
+    private void swap(int i, int j){
+        Pair<K, V> tmp = heap.get(i);
+        heap.set(i, heap.get(j));
+        heap.set(j,tmp);
+    }
+
 }
