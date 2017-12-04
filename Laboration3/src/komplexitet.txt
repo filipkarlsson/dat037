@@ -1,0 +1,52 @@
+Put
+    public void put(K k, V v) {
+        if (map.containsKey(k)){                // 1 (optimal hash)
+            heap.get(map.get(k)).b = v;         // 1
+            bubbleDown(map.get(k));             // log(n)
+            bubbleUp(map.get(k));               // 1 only one of bubbleUp and bubbleDown will take significant time
+        }
+        else{
+            heap.add(new Pair<K, V>(k,v));      // 1
+            map.put(k,heap.size()-1);           // 1
+            bubbleUp(heap.size() - 1);          // log(n)
+        }
+    }
+
+    Time complexity is O(log(n))
+
+
+Get
+  public V get(K k) {
+        if (!map.containsKey(k)) return null; // 1
+        return heap.get(map.get(k)).b;        // 1
+    }
+
+    Time complexity is O(1)
+
+
+
+Poll
+    public Pair<K,V> poll() {
+        if (heap.isEmpty()) return null;  // 1
+        Pair<K,V> root = heap.get(0);     // 1
+
+        swap(0, heap.size() -1);          // 1
+        heap.remove(heap.size()-1);       // 1
+        if (heap.size() != 0){            // 1
+            bubbleDown(0);                // log(n)
+        }
+        map.remove(root.a);               // 1
+
+        return root;                      // 1
+
+    }
+Time complexity is O(log(n))
+
+
+Peek
+    public Pair<K,V> peek() {
+        if (heap.isEmpty()) return null;  // 1
+        return heap.get(0);                 //1
+    }
+
+ Time complexity is O(1)
