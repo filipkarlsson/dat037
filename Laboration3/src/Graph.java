@@ -32,13 +32,15 @@ public class Graph {
 
     public Path shortestPath(String start, String dest) {
         HashMap<String, Integer> d = new HashMap<>();
-        for (String s : nodes.keySet()){
-            d.put(s,Integer.MAX_VALUE);
-        }
         HashSet<Pair<String, Integer>> k = new HashSet<>();
         HashMap<String, String> p = new HashMap<>();
 
         PrioMap<String, Integer> q = new APrioMap<>();
+
+        for (String s : nodes.keySet()){
+            d.put(s,Integer.MAX_VALUE);
+        }
+
         q.put(start, 0);
         d.put(start, 0);
 
@@ -47,11 +49,14 @@ public class Graph {
             if (!k.contains(v)){
                 k.add(v);
 
-                for (Pair<String, Integer> succesor : nodes.get(v.a)){ // for all succesors
-                     if (!k.contains(succesor) &&  d.get(succesor.a) > d.get(v.a) + succesor.b){
-                         d.replace(succesor.a, d.get(v.a) + succesor.b);
-                         p.put(succesor.a, v.a);
-                         q.put(succesor.a, succesor.b);
+                for (Pair<String, Integer> successor : nodes.get(v.a)){ // for all succesors
+                    int oldShortestPathLength = d.get(successor.a);
+                    int newPathLength = d.get(v.a) + successor.b;
+
+                     if (!k.contains(successor) &&  oldShortestPathLength > newPathLength){
+                         d.replace(successor.a, newPathLength);
+                         p.put(successor.a, v.a);
+                         q.put(successor.a, d.get(successor.a));
                     }
                 }
 
