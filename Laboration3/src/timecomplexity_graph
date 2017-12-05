@@ -1,0 +1,44 @@
+ public Path shortestPath(String start, String dest) {
+        HashMap<String, Integer> d = new HashMap<>();           // 1
+        HashSet<Pair<String, Integer>> k = new HashSet<>();     // 1
+        HashMap<String, String> p = new HashMap<>();            // 1
+
+        PrioMap<String, Integer> q = new APrioMap<>();          // 1
+
+        for (String s : nodes.keySet()){                        // V
+            d.put(s,Integer.MAX_VALUE);        // 1
+        }
+
+        q.put(start, 0);    // 1
+        d.put(start, 0);    // 1
+
+        while (q.peek() != null) {
+            Pair<String, Integer> v = q.poll();
+            if (!k.contains(v)){
+                k.add(v);
+
+                for (Pair<String, Integer> successor : nodes.get(v.a)){ // for all succesors
+                    int oldShortestPathLength = d.get(successor.a);
+                    int newPathLength = d.get(v.a) + successor.b;
+
+                     if (!k.contains(successor) &&  oldShortestPathLength > newPathLength){
+                         d.replace(successor.a, newPathLength); // 1
+                         p.put(successor.a, v.a);               // 1
+                         q.put(successor.a, d.get(successor.a)); // log(E) (total) ??
+                    }
+                }
+
+            }
+        }
+
+        if (d.get(dest) == Integer.MAX_VALUE) return null;
+        LinkedList<String> pathList = new LinkedList<>();
+        pathList.add(dest);
+        while (!pathList.get(0).equals(start)){
+            pathList.addFirst(p.get(pathList.getFirst()));
+        }
+
+        return new Path(d.get(dest), pathList);
+
+    }
+}
