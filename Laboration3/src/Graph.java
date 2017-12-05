@@ -35,8 +35,8 @@ public class Graph {
         for (String s : nodes.keySet()){
             d.put(s,Integer.MAX_VALUE);
         }
-        HashSet<Pair<String, Integer>> shortestPathFound = new HashSet<>();
-        HashMap<String, String> predecessor = new HashMap<>();
+        HashSet<Pair<String, Integer>> k = new HashSet<>();
+        HashMap<String, String> p = new HashMap<>();
 
         PrioMap<String, Integer> q = new APrioMap<>();
         q.put(start, 0);
@@ -44,13 +44,13 @@ public class Graph {
 
         while (q.peek() != null) {
             Pair<String, Integer> v = q.poll();
-            if (!shortestPathFound.contains(v)){
-                shortestPathFound.add(v);
+            if (!k.contains(v)){
+                k.add(v);
 
                 for (Pair<String, Integer> succesor : nodes.get(v.a)){ // for all succesors
-                     if (!shortestPathFound.contains(succesor) &&  d.get(succesor.a) > d.get(v.a) + succesor.b){
+                     if (!k.contains(succesor) &&  d.get(succesor.a) > d.get(v.a) + succesor.b){
                          d.replace(succesor.a, d.get(v.a) + succesor.b);
-                         predecessor.put(succesor.a, v.a);
+                         p.put(succesor.a, v.a);
                          q.put(succesor.a, succesor.b);
                     }
                 }
@@ -59,10 +59,10 @@ public class Graph {
         }
 
         if (d.get(dest) == Integer.MAX_VALUE) return null;
-        LinkedList<String> pathList = new LinkedList();
+        LinkedList<String> pathList = new LinkedList<>();
         pathList.add(dest);
-        while (pathList.get(0) != start){
-            pathList.addFirst(predecessor.get(pathList.getFirst()));
+        while (!pathList.get(0).equals(start)){
+            pathList.addFirst(p.get(pathList.getFirst()));
         }
 
         return new Path(d.get(dest), pathList);
