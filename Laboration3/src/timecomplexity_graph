@@ -12,33 +12,38 @@
         q.put(start, 0);    // 1
         d.put(start, 0);    // 1
 
+// The loops will run O(2*E+V) times (the for-loop only visits its direct successors)
+// (2*E because undirected graph)
+// V because the while loop visits all nodes.
         while (q.peek() != null) {
-            Pair<String, Integer> v = q.poll();
-            if (!k.contains(v)){
-                k.add(v);
+            Pair<String, Integer> v = q.poll(); // log2(q.size()) total O(log V)
+            if (!k.contains(v)){  // 1
+                k.add(v); // 1
 
-                for (Pair<String, Integer> successor : nodes.get(v.a)){ // for all succesors
-                    int oldShortestPathLength = d.get(successor.a);
-                    int newPathLength = d.get(v.a) + successor.b;
+                for (Pair<String, Integer> successor : nodes.get(v.a)){ // 1  // for all succesors
+                    int oldShortestPathLength = d.get(successor.a); // 1
+                    int newPathLength = d.get(v.a) + successor.b; // 1
 
-                     if (!k.contains(successor) &&  oldShortestPathLength > newPathLength){
+                    if (!k.contains(successor) &&  oldShortestPathLength > newPathLength){
                          d.replace(successor.a, newPathLength); // 1
                          p.put(successor.a, v.a);               // 1
-                         q.put(successor.a, d.get(successor.a)); // log(E) (total) ??
+                         q.put(successor.a, d.get(successor.a)); // log2(q.size()) total O(log(V))
                     }
                 }
 
             }
         }
 
-        if (d.get(dest) == Integer.MAX_VALUE) return null;
-        LinkedList<String> pathList = new LinkedList<>();
-        pathList.add(dest);
-        while (!pathList.get(0).equals(start)){
+        if (d.get(dest) == Integer.MAX_VALUE) return null; //1
+        LinkedList<String> pathList = new LinkedList<>(); // 1
+        pathList.add(dest);     // 1
+        while (!pathList.get(0).equals(start)){ // worst case O(E)
             pathList.addFirst(p.get(pathList.getFirst()));
         }
 
-        return new Path(d.get(dest), pathList);
+        return new Path(d.get(dest), pathList); //1
 
     }
 }
+
+total time complexity is O((V + E)*log(V))
